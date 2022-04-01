@@ -15,4 +15,17 @@ router.get('/', (req, res) => {
     })
 })
 
+// POST: /api/employers => receive form post with new employer data
+router.post('/', (req, res) => {
+    // use mongoose to try to create new document from the request body
+    Employer.create(req.body, (err, employer) => {
+        if (err) {
+            return res.json(err).status(400)
+        }
+        else {
+            return res.json(employer).status(201) // 201: Resource Created
+        }
+    })
+})
+
 module.exports = router
