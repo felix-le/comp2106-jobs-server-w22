@@ -28,4 +28,28 @@ router.post('/', (req, res) => {
     })
 })
 
+// DELETE: /api/employers/abc123 => delete document with id from url param
+router.delete('/:_id', (req, res) => {
+    Employer.remove({ _id: req.params._id }, (err, employer) => {
+        if (err) {
+            return res.json(err).status(400)
+        }
+        else {
+            return res.json(employer).status(204) // 204: No Content
+        }
+    })
+})
+
+// PUT: /api/employers/abc123 => update document with id from url param
+router.put('/:_id', (req, res) => {
+    Employer.findOneAndUpdate({ _id: req.params._id }, req.body, (err, employer) => {
+        if (err) {
+            return res.json(err).status(400)
+        }
+        else {
+            return res.json(employer).status(202)  // 202: Accepted
+        }
+    })
+})
+
 module.exports = router
