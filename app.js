@@ -19,7 +19,7 @@ app.use(cors({
 }))
 
 // db connection
-mongoose.connect(process.env.DATABASE_URL, {
+mongoose.connect('mongodb+srv://comp2106:Winter2022@comp2106.pijii.mongodb.net/comp2106?retryWrites=true&w=majority', {
 }).then((res) => {
     console.log('Connected to MongoDB')
 }).catch((err) => {
