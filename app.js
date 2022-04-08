@@ -30,6 +30,12 @@ mongoose.connect(process.env.DATABASE_URL, {
 const employers = require('./controllers/employers')
 app.use('/api/employers', employers)
 
+// route all http requests to our single page index.html from the angular bundle we copied in
+app.use(express.static(__dirname + '/public'))
+app.get('*', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html')
+})
+
 // start server & make public
 app.listen(3000)
 module.exports = app
