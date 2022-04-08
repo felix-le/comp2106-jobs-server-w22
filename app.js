@@ -13,13 +13,13 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // enable cors for client site
-app.use(cors({
+/*app.use(cors({
     origin: process.env.CLIENT_URL,
     methods: "GET,POST,PUT,DELETE,HEAD,OPTIONS"
-}))
+}))*/
 
 // db connection
-mongoose.connect('mongodb+srv://comp2106:Winter2022@comp2106.pijii.mongodb.net/comp2106?retryWrites=true&w=majority', {
+mongoose.connect(process.env.DATABASE_URL, {
 }).then((res) => {
     console.log('Connected to MongoDB')
 }).catch((err) => {
