@@ -54,7 +54,7 @@ const interactFiles = {
         }
       });
       let result = {
-        error: '',
+        mess: 'Upload file successfully',
         fileName: file.name,
         newFileName: file.name.replace(/\s/g, '').toLowerCase(),
       };
@@ -78,7 +78,7 @@ const interactFiles = {
         }
       });
       let result = {
-        error: '',
+        mess: 'Upload files successfully',
         fileName: file.name,
         newFileName: file.name.replace(/\s/g, '').toLowerCase(),
       };
@@ -101,7 +101,7 @@ const interactFiles = {
         }
       });
       let result = {
-        error: '',
+        mess: 'Upload file successfully',
         fileName: file.name,
         newFileName: file.name.replace(/\s/g, '').toLowerCase(),
       };

@@ -13,6 +13,7 @@ const uploadFileCtrl = {
         let file = req.files.files;
 
         const result = await interactFileExist.classifyAndSaveFileFn(file);
+
         if (!result.error) {
           return res.json(result);
         } else {
