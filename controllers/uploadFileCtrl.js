@@ -1,5 +1,5 @@
 const interactFileExist = require('../helper/interactFileExist');
-
+const { join } = require('path');
 const { isArray } = require('lodash');
 const uploadFileCtrl = {
   uploadFileFn: async (req, res) => {
