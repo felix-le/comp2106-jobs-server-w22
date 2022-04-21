@@ -13,7 +13,12 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 // enable cors for client site
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL,
+    methods: 'GET,POST,PUT,DELETE,HEAD,OPTIONS',
+  })
+);
 
 // db connection
 mongoose
@@ -24,7 +29,6 @@ mongoose
   .catch((err) => {
     console.log('Connection Error: ' + err);
   });
-
 // controller reference
 const employers = require('./controllers/employers');
 app.use('/api/employers', employers);
