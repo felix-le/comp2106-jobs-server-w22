@@ -38,4 +38,5 @@ const uploadFileCtrl = {
     }
   },
 };
+
 module.exports = uploadFileCtrl;
